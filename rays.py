@@ -50,8 +50,6 @@ class Rays:
                     ray[2] = d
                     ray[0] = px
                     ray[1] = py
-                else:
-                    break
 
     def draw_center(self):
         pygame.draw.circle(self.screen, self.color,
@@ -60,7 +58,7 @@ class Rays:
     def draw_rays(self):
         for ray in self.ray_end_points:
             pygame.draw.line(self.screen, self.color,
-                             self.center, (ray[0], ray[1]))
+                             self.center, (ray[0], ray[1]), 2)
 
     def get_center(self):
         self.center = pygame.mouse.get_pos()
