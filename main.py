@@ -38,7 +38,10 @@ class RayCast:
                 sys.exit()
 
     def on_loop(self):
-        pass
+        self.ray.get_center()
+        for boundary in self.boundary_list:
+            self.ray.get_intersection(
+                boundary.start_pos, boundary.end_pos)
 
     def on_render(self):
         # draw the screen
